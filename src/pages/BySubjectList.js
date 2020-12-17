@@ -3,31 +3,45 @@ import { useHistory } from 'react-router-dom';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import styled from 'styled-components';
 
+import { ShadowContainer, Li} from '../styles/TeacherListStyle'
+
 export default function BySubjectList(){
     const history = useHistory();
+    const t = "Cálculo 1";
 
     function goBack(){
         history.push('/exams');
     }
 
+    function teste(e){
+        console.log(e);
+    }
+
     return(
-        <Container>
+        <ShadowContainer>
             <div className="Topo">
                <h1>Listagem de disciplinas cadastrados</h1>
                 <RiArrowGoBackLine onClick={goBack}/> 
             </div>
             
-            <div className="Op">
-                <p>exemplo 1</p>
-            </div>
-        </Container>
+            <ul className="Op">
+                <Li onClick={()=>teste(t)}>
+                    <p>{t}</p> 
+                    <p>x provas</p>
+                </Li>
+                <Li>
+                   <p>Banco de dados</p> 
+                   <p>x provas</p>
+                </Li>
+            </ul>
+        </ShadowContainer>
     );
 }
 
 const Container = styled.div`
-    background: #561717;
+    /* background: #561717;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
