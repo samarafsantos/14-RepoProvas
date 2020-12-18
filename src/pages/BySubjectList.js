@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import axios from 'axios';
 
-import { ShadowContainer, Li} from '../styles/TeacherListStyle'
+import { ShadowContainer, Li} from '../styles/SubjectsListStyle'
 
 export default function BySubjectList(){
     const [info, setInfo] = useState([]);
