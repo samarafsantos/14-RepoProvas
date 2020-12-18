@@ -9,12 +9,18 @@ export const ShadowContainer = styled.div`
     color: #FFF;
     .Topo{
         display: flex;
-        font-size: 30px;
+        font-size: 22px;
         justify-content: space-between;
         width: 100%;
         padding: 10px;
         border-bottom: 1px solid;
         background:#ff6e6ea8;
+        svg{
+            font-size: 30px;
+        }
+        h1{
+            text-align: center;
+        }
     }
     .Op{
         margin-top: 50px;
