@@ -19,7 +19,7 @@ export default function ByTeacherList(){
             setInfo(response.data);
         })
         .catch(error=>{
-            console.log(error);
+            alert("Houve um erro inesperado, por favor recarregue a página");
         })
     }, []);
 

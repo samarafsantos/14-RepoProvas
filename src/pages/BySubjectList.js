@@ -23,7 +23,7 @@ export default function BySubjectList(){
             setSemester(filteredSemester);
         })
         .catch(error=>{
-            console.log(error);
+            alert("Houve um erro inesperado, por favor recarregue a página");
         })
     }, []);
 

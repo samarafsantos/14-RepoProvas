@@ -23,7 +23,7 @@ export default function ExamsListByS(){
             setSemester(semesters);
         })
         .catch(error=>{
-            console.log(error);
+            alert("Houve um erro inesperado ao tentar acessar este arquivo, por favor recarregue a página");
         })
     },[])
 
