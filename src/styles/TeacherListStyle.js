@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ShadowContainer = styled.div`
-    height: 100vh;
+    height: 100%;
     background: #00000080;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,15 @@ export const ShadowContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;  
+        h1{
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        a{
+            width:100%;
+            display: flex;
+            justify-content: space-around;
+        }
     }
     svg{
         &:hover{

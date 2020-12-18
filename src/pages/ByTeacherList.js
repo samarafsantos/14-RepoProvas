@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { RiArrowGoBackLine } from 'react-icons/ri';
-import styled from 'styled-components';
 import axios from 'axios';
 
 import { ShadowContainer, Li} from '../styles/TeacherListStyle'
@@ -11,20 +10,23 @@ export default function ByTeacherList(){
     const history = useHistory();
 
     function goBack(){
-        history.push('/exams');
+        history.push('/list-op');
     }
 
-    // useEffect(()=>{
-    //     const request = axios.get('http://localhost:3000/api/get-teachers')
-    //     .then(response=>{
-    //         console.log(response);
-    //         setInfo(response.data);
-    //     })
-    //     .catch(error=>{
-    //         console.log(error);
-    //     })
-    // }, []);
+    useEffect(()=>{
+        axios.get('http://localhost:3000/api/get-teachers')
+        .then(response=>{
+            setInfo(response.data);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }, []);
 
+    function goToExamsList(teacherChosen){
+        if(teacherChosen.qty_exams===null) return;
+        history.push(`/exams-list/${teacherChosen.id}`);
+    }
 
     return(
         <ShadowContainer>
@@ -34,14 +36,14 @@ export default function ByTeacherList(){
             </div>
             
             <ul className="Op">
-                <Li>
-                   <p>exemplo 1</p> 
-                   <p>x provas</p>
-                </Li>
-                <Li>
-                   <p>exemplo 1</p> 
-                   <p>x provas</p>
-                </Li>
+
+                { info.length === 0 ? ""
+                : info.map(l=>
+                    <Li key={l.id} onClick={()=>goToExamsList(l)}>
+                        <p>{l.name}</p>
+                        {l.qty_exams === null ? <p>0</p> : <p>{l.qty_exams}</p>} 
+                    </Li>
+                )}
             </ul>
         </ShadowContainer>
     );

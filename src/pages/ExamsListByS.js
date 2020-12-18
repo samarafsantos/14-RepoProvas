@@ -5,18 +5,18 @@ import axios from 'axios';
 
 import { ShadowContainer, Li} from '../styles/TeacherListStyle'
 
-export default function ExamsList(){
+export default function ExamsListByS(){
     const id = useParams();
     const [exams, setExams] = useState([]);
     const history = useHistory();
     const [semester, setSemester] = useState([]);
 
     function goBack(){
-        history.push("/list-by-teacher")
+        history.push("/list-by-subject")
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/api/get-exams/${id.id}`)
+        axios.get(`http://localhost:3000/api/get-exams-s/${id.id}`)
         .then(response=>{
             setExams(response.data);
             let semesters = response.data.map(r => r.type);
@@ -47,7 +47,7 @@ export default function ExamsList(){
                         l.type === s ? 
                         <Li key={l.id} onClick={()=>openLink(l)}>
                             <p>{l.name}</p>
-                            <p>{l.subject}</p>
+                            <p>{l.teacher}</p>
                         </Li> : ""
                         )}
                     </ul>
