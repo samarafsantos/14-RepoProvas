@@ -67,7 +67,7 @@ export default function Home(){
             </div>
             
             <Form onSubmit={sendData}>
-                <div>
+                <div className="ExamInfo">
                     <input
                     type="text"
                     value={examName}

@@ -86,4 +86,13 @@ export const Form = styled.form`
             cursor: pointer;
         }
     }
+    @media (max-width:400px){
+        .ExamInfo{
+            flex-direction: column;
+            input{
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+    }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ShadowContainer = styled.div`
-    height: 100%;
+    height: 100vh;
     background: #00000080;
     display: flex;
     flex-direction: column;
