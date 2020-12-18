@@ -16,7 +16,7 @@ export default function ExamsListByS(){
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/api/get-exams-s/${id.id}`)
+        axios.get(`https://repoprovasapi.herokuapp.com/api/get-exams-s/${id.id}`)
         .then(response=>{
             setExams(response.data);
             let semesters = response.data.map(r => r.type);

@@ -14,7 +14,7 @@ export default function ByTeacherList(){
     }
 
     useEffect(()=>{
-        axios.get('http://localhost:3000/api/get-teachers')
+        axios.get('https://repoprovasapi.herokuapp.com/api/get-teachers')
         .then(response=>{
             setInfo(response.data);
         })

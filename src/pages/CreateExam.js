@@ -22,7 +22,7 @@ export default function Home(){
     }
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/api/get-subjects")
+        axios.get("https://repoprovasapi.herokuapp.com/api/get-subjects")
         .then((response)=>{
             setSubject(response.data);
         })
@@ -30,7 +30,7 @@ export default function Home(){
             alert("Houve um erro inesperado, por favor recarregue a página");
         })
 
-        axios.get("http://localhost:3000/api/get-teacher-subjects")
+        axios.get("https://repoprovasapi.herokuapp.com/api/get-teacher-subjects")
         .then(response=>{
             setTeacher(response.data);
         })
@@ -49,7 +49,7 @@ export default function Home(){
     function sendData(e){
         e.preventDefault();
         const data = {examName, category, chosenSubject, chosenTeacher, link}
-        axios.post('http://localhost:3000/api/register-exam', {data})
+        axios.post('https://repoprovasapi.herokuapp.com/api/register-exam', {data})
         .then(response=>{
             alert("Prova cadastrada com sucesso!");
             history.push("/");

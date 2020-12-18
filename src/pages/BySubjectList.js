@@ -15,7 +15,7 @@ export default function BySubjectList(){
     }
 
     useEffect(()=>{
-        axios.get('http://localhost:3000/api/get-subjects')
+        axios.get('https://repoprovasapi.herokuapp.com/api/get-subjects')
         .then(response=>{
             setInfo(response.data);
             let semesters = response.data.map(r => r.semester);
