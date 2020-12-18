@@ -15,9 +15,6 @@ export const Container = styled.div`
         padding: 10px;
         border-bottom: 1px solid;
         background:#ff6e6ea8;
-        svg{
-            font-size: 150px; 
-        }
     }
     .Op{
         margin-top: 50px;
